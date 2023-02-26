@@ -8,7 +8,15 @@
     <ApplicationId>me.jmh.authenticatorpro</ApplicationId>
     <ApplicationVersion>1</ApplicationVersion>
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <AndroidLinkTool>r8</AndroidLinkTool>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <AotAssemblies>true</AotAssemblies>
+    <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>
     <AndroidUseDefaultAotProfile>false</AndroidUseDefaultAotProfile>
+    <AndroidLinkMode>Full</AndroidLinkMode>
+    <AndroidLinkSkip>AuthenticatorPro.Shared;AuthenticatorPro.Droid.Shared;protobuf-net;protobuf-net.Core;Xamarin.AndroidX.Biometric;Xamarin.GooglePlayServices.Wearable;Xamarin.AndroidX.CoordinatorLayout</AndroidLinkSkip>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.0">
@@ -54,5 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAotProfile Include="custom.aprof" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProguardConfiguration Include="proguard.cfg" />
   </ItemGroup>
 </Project>
