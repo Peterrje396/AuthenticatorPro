@@ -123,8 +123,8 @@ namespace AuthenticatorPro.Droid.Activity
         private readonly IAuthenticatorCategoryRepository _authenticatorCategoryRepository;
         private readonly ICustomIconRepository _customIconRepository;
 
-        private readonly IAuthenticatorCategoryService _authenticatorCategoryService;
         private readonly IAuthenticatorService _authenticatorService;
+        private readonly IAuthenticatorCategoryService _authenticatorCategoryService;
         private readonly IBackupService _backupService;
         private readonly ICustomIconService _customIconService;
         private readonly IImportService _importService;
@@ -152,12 +152,12 @@ namespace AuthenticatorPro.Droid.Activity
             _customIconDecoder = Dependencies.Resolve<ICustomIconDecoder>();
             _database = Dependencies.Resolve<Database>();
 
-            _authenticatorCategoryService = Dependencies.Resolve<IAuthenticatorCategoryService>();
             _categoryRepository = Dependencies.Resolve<ICategoryRepository>();
             _authenticatorCategoryRepository = Dependencies.Resolve<IAuthenticatorCategoryRepository>();
             _customIconRepository = Dependencies.Resolve<ICustomIconRepository>();
 
             _authenticatorService = Dependencies.Resolve<IAuthenticatorService>();
+            _authenticatorCategoryService = Dependencies.Resolve<IAuthenticatorCategoryService>();
             _backupService = Dependencies.Resolve<IBackupService>();
             _customIconService = Dependencies.Resolve<ICustomIconService>();
             _importService = Dependencies.Resolve<IImportService>();
